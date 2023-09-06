@@ -3,22 +3,22 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d02l7nnnfajd3"
-path="res://.godot/imported/parallax-01.png-ea237f0aebf2e6b268f5e76e0fe324f7.ctex"
+path="res://.godot/imported/parallax-01.png-397edb05b2f8dc5558f2fa33ce15fd30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets_PixelAdventure/Parallax/parallax-01.png"
-dest_files=["res://.godot/imported/parallax-01.png-ea237f0aebf2e6b268f5e76e0fe324f7.ctex"]
+source_file="res://Assets/Parallax/parallax-01.png"
+dest_files=["res://.godot/imported/parallax-01.png-397edb05b2f8dc5558f2fa33ce15fd30.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

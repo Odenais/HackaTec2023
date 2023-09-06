@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ded5w5a4wiuy8"]
+[gd_scene load_steps=5 format=3 uid="uid://ded5w5a4wiuy8"]
 
+[ext_resource type="Texture2D" uid="uid://em3hhtgs2eyf" path="res://Assets/Parallax/Parallax background.png" id="1_ihhe4"]
 [ext_resource type="FontFile" uid="uid://covt2bip852x7" path="res://Assets/Fonts/04b_30/04B_30__.TTF" id="1_oqrvj"]
+[ext_resource type="Script" path="res://Escenas/MenuPrincipal.gd" id="1_sdckn"]
 [ext_resource type="FontFile" uid="uid://8jtfifoqgh0j" path="res://Assets/Fonts/mayan_2/Mayan.ttf" id="1_yeqy2"]
 
 [node name="Menu" type="Node"]
+script = ExtResource("1_sdckn")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(719, 358)
+texture = ExtResource("1_ihhe4")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -57,8 +68,4 @@ theme_override_fonts/font = ExtResource("1_oqrvj")
 theme_override_font_sizes/font_size = 26
 text = "INICIAR JUEG0"
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Control"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Control/ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/ParallaxBackground/ParallaxLayer"]
+[connection signal="pressed" from="Control/VBoxContainer/ButtonContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
