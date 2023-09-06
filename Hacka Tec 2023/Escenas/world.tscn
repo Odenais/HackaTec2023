@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqyx8c2nkowib"]
+[gd_scene load_steps=9 format=3 uid="uid://dqyx8c2nkowib"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_qtamv"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ydkud"]
 [ext_resource type="Texture2D" uid="uid://dgyi4fq4exnl0" path="res://Assets/Z.png" id="2_r4sdj"]
 [ext_resource type="Texture2D" uid="uid://4r7ejs6nyn5v" path="res://Assets/CHover.png" id="3_0nswx"]
 [ext_resource type="Texture2D" uid="uid://3c7t80fclt6v" path="res://Assets/C.png" id="3_7weyr"]
@@ -471,6 +472,7 @@ texture = ExtResource("1_qtamv")
 sources/0 = SubResource("TileSetAtlasSource_je3ap")
 
 [node name="Mexico" type="Node2D"]
+script = ExtResource("1_ydkud")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dio62")
@@ -494,3 +496,6 @@ offset_bottom = 268.0
 texture_normal = ExtResource("3_7weyr")
 texture_hover = ExtResource("3_0nswx")
 stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
