@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ded5w5a4wiuy8"]
+[gd_scene load_steps=3 format=3 uid="uid://ded5w5a4wiuy8"]
 
 [ext_resource type="FontFile" uid="uid://covt2bip852x7" path="res://Assets/Fonts/04b_30/04B_30__.TTF" id="1_oqrvj"]
+[ext_resource type="FontFile" uid="uid://8jtfifoqgh0j" path="res://Assets/Fonts/mayan_2/Mayan.ttf" id="1_yeqy2"]
 
 [node name="Menu" type="Node"]
 
@@ -39,8 +40,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("1_oqrvj")
-theme_override_font_sizes/font_size = 58
+theme_override_fonts/font = ExtResource("1_yeqy2")
+theme_override_font_sizes/font_size = 72
 text = "MexicoMagico"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -53,7 +54,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_oqrvj")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 26
 text = "INICIAR JUEG0"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Control"]
