@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cutcbvufa2xg5"
-path="res://.godot/imported/far.png-bc65288caca1d9e08ef2a8e88dcf678a.ctex"
+uid="uid://wedn1arakift"
+path="res://.godot/imported/AHover.png-2d6fee9e55c1dfa3bd19d1712b96e80d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/far.png"
-dest_files=["res://.godot/imported/far.png-bc65288caca1d9e08ef2a8e88dcf678a.ctex"]
+source_file="res://Assets/AHover.png"
+dest_files=["res://.godot/imported/AHover.png-2d6fee9e55c1dfa3bd19d1712b96e80d.ctex"]
 
 [params]
 

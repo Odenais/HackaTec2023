@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dui0jh5sl3m71"
-path="res://.godot/imported/foreground-1.png-d99a98971c50ca5afb6a2f55dce68ec3.ctex"
+uid="uid://b4mnd7seknb17"
+path="res://.godot/imported/SHover.png-e4cbfe8875f8cd288d005e55a48b9988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/foreground-1.png"
-dest_files=["res://.godot/imported/foreground-1.png-d99a98971c50ca5afb6a2f55dce68ec3.ctex"]
+source_file="res://Assets/SHover.png"
+dest_files=["res://.godot/imported/SHover.png-e4cbfe8875f8cd288d005e55a48b9988.ctex"]
 
 [params]
 

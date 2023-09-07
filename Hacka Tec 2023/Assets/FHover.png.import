@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvy7en7impjed"
-path="res://.godot/imported/sand.png-597945792daa4a3e4d236cbbed214b18.ctex"
+uid="uid://cgmgalesq0x5e"
+path="res://.godot/imported/FHover.png-5f2ff6d5a69950809bfcbc832f52830b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sand.png"
-dest_files=["res://.godot/imported/sand.png-597945792daa4a3e4d236cbbed214b18.ctex"]
+source_file="res://Assets/FHover.png"
+dest_files=["res://.godot/imported/FHover.png-5f2ff6d5a69950809bfcbc832f52830b.ctex"]
 
 [params]
 

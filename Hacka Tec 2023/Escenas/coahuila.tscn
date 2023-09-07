@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://budhc32g0iak8"]
+[gd_scene load_steps=11 format=3 uid="uid://budhc32g0iak8"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_150l6"]
 [ext_resource type="Texture2D" uid="uid://7a4pstwagjxp" path="res://Assets/S.png" id="2_vm14q"]
-[ext_resource type="Texture2D" uid="uid://bcanbj0w7axt0" path="res://Assets/ZHover.png" id="3_00jg8"]
+[ext_resource type="Texture2D" uid="uid://b4mnd7seknb17" path="res://Assets/SHover.png" id="3_nqanp"]
 [ext_resource type="Texture2D" uid="uid://3c7t80fclt6v" path="res://Assets/C.png" id="4_c7iha"]
 [ext_resource type="Texture2D" uid="uid://4r7ejs6nyn5v" path="res://Assets/CHover.png" id="5_malov"]
 [ext_resource type="Texture2D" uid="uid://difv7koli0edk" path="res://Assets/A.png" id="6_new0h"]
+[ext_resource type="Texture2D" uid="uid://wedn1arakift" path="res://Assets/AHover.png" id="7_ynpu4"]
+[ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="8_dr5yc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1xfa"]
 texture = ExtResource("1_150l6")
@@ -486,7 +488,7 @@ offset_top = 205.0
 offset_right = 158.0
 offset_bottom = 259.0
 texture_normal = ExtResource("2_vm14q")
-texture_hover = ExtResource("3_00jg8")
+texture_hover = ExtResource("3_nqanp")
 stretch_mode = 0
 
 [node name="ButtonCandela" type="TextureButton" parent="."]
@@ -504,5 +506,7 @@ offset_top = 226.0
 offset_right = 292.0
 offset_bottom = 280.0
 texture_normal = ExtResource("6_new0h")
-texture_hover = ExtResource("3_00jg8")
+texture_hover = ExtResource("7_ynpu4")
 stretch_mode = 0
+
+[node name="Background" parent="." instance=ExtResource("8_dr5yc")]

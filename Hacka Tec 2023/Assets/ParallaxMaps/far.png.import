@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pohu303msk2x"
-path="res://.godot/imported/foreground-2.png-4cbeafb69afd255d963d3339b8e2a11d.ctex"
+uid="uid://cutcbvufa2xg5"
+path="res://.godot/imported/far.png-6be5a1777b43d7d0e70de9ee1c1668da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/foreground-2.png"
-dest_files=["res://.godot/imported/foreground-2.png-4cbeafb69afd255d963d3339b8e2a11d.ctex"]
+source_file="res://Assets/ParallaxMaps/far.png"
+dest_files=["res://.godot/imported/far.png-6be5a1777b43d7d0e70de9ee1c1668da.ctex"]
 
 [params]
 
