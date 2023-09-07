@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://lcsx105t8xsx"]
+[gd_scene load_steps=21 format=3 uid="uid://lcsx105t8xsx"]
 
 [ext_resource type="Texture2D" uid="uid://nt61sn8u2u2h" path="res://Assets/parallax-02.png" id="1_op06r"]
 [ext_resource type="Texture2D" uid="uid://cwgrvtatr6ok7" path="res://Sprites/Rocky Roads/Tilesets/tileset_dirt.png" id="2_tiqqa"]
+[ext_resource type="PackedScene" uid="uid://xplpddt8dbe1" path="res://Players/Murciélago.tscn" id="3_6dksb"]
 [ext_resource type="PackedScene" uid="uid://cjsfetl2jnmio" path="res://Players/MainPlayer/player.tscn" id="3_p8e7r"]
+[ext_resource type="Script" path="res://Sprites/Murciélago.gd" id="4_28omj"]
 [ext_resource type="PackedScene" uid="uid://bd7k5jxl0jqat" path="res://Escenas/PortalFueraCueva.tscn" id="4_lawjc"]
 
 [sub_resource type="Gradient" id="Gradient_qx2mv"]
@@ -14,11 +16,15 @@ gradient = SubResource("Gradient_qx2mv")
 height = 85
 
 [sub_resource type="Gradient" id="Gradient_vh8cm"]
-offsets = PackedFloat32Array(0, 0.264516)
+offsets = PackedFloat32Array(0.275862, 0.362069)
 colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gtelg"]
 gradient = SubResource("Gradient_vh8cm")
+width = 400
+height = 400
+fill = 1
+fill_to = Vector2(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lot51"]
 texture = ExtResource("2_tiqqa")
@@ -246,6 +252,13 @@ _data = {
 "fade_out": SubResource("Animation_b2mwc")
 }
 
+[sub_resource type="Gradient" id="Gradient_1l223"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.309804)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lbd0o"]
+gradient = SubResource("Gradient_1l223")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -279,9 +292,24 @@ limit_bottom = 100
 position_smoothing_enabled = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1187, 151)
-scale = Vector2(3.95313, 1)
+position = Vector2(1113.25, 165)
+scale = Vector2(0.47375, 0.135)
 texture = SubResource("GradientTexture2D_gtelg")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_6dksb")]
+position = Vector2(1131, 150)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_28omj")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_6dksb")]
+position = Vector2(1120, 150)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_28omj")
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("3_6dksb")]
+position = Vector2(1109, 150)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_28omj")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nc1jj")
@@ -324,5 +352,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1119.5, 149.5)
+scale = Vector2(0.640625, 0.234375)
+texture = SubResource("GradientTexture2D_lbd0o")
 
 [connection signal="animation_finished" from="Transicion" to="Area2D" method="_on_transicion_animation_finished"]
