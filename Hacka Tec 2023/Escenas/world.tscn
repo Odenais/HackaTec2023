@@ -598,11 +598,17 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("8_mysbg")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 776.0
-offset_top = 80.0
-offset_right = 1282.0
-offset_bottom = 204.0
+offset_left = 659.0
+offset_top = 99.0
+offset_right = 1165.0
+offset_bottom = 223.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("9_u82b6")
+theme_override_font_sizes/font_size = 68
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

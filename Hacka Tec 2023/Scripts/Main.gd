@@ -9,7 +9,8 @@ func _ready():
 func _process(delta):
 	if $TextureButton2.is_hovered():
 		$Label.text = "Coahuila"
-
+	elif $TextureButton.is_hovered():
+		$Label.text = "Zacatecas"
 func _on_texture_button_pressed():
 	transition.play("fade_out")
 	opc = "ZAC"
