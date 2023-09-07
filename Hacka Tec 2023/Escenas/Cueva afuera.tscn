@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://lcsx105t8xsx"]
+[gd_scene load_steps=17 format=3 uid="uid://c7fecre66pnm2"]
 
 [ext_resource type="Texture2D" uid="uid://nt61sn8u2u2h" path="res://Assets/parallax-02.png" id="1_op06r"]
 [ext_resource type="Texture2D" uid="uid://cwgrvtatr6ok7" path="res://Sprites/Rocky Roads/Tilesets/tileset_dirt.png" id="2_tiqqa"]
 [ext_resource type="PackedScene" uid="uid://cjsfetl2jnmio" path="res://Players/MainPlayer/player.tscn" id="3_p8e7r"]
-[ext_resource type="PackedScene" path="res://Escenas/PortalFueraCueva.tscn" id="4_lawjc"]
+[ext_resource type="PackedScene" uid="uid://bd7k5jxl0jqat" path="res://Escenas/PortalFueraCueva.tscn" id="4_lawjc"]
 
 [sub_resource type="Gradient" id="Gradient_qx2mv"]
 offsets = PackedFloat32Array(0)
@@ -168,6 +168,21 @@ size = Vector2(81, 112.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocyiv"]
 size = Vector2(73, 14)
 
+[sub_resource type="Animation" id="Animation_5c7k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_4lhmx"]
 resource_name = "fade_in"
 length = 0.7
@@ -194,21 +209,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_5c7k1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transicion/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_b2mwc"]
