@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://3c7t80fclt6v" path="res://Assets/C.png" id="3_7weyr"]
 [ext_resource type="Texture2D" uid="uid://bcanbj0w7axt0" path="res://Assets/ZHover.png" id="5_gm35u"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="7_eh8x7"]
-[ext_resource type="AudioStream" uid="uid://b008iavp1q15i" path="res://Assets/Sounds/mexico-144621.mp3" id="8_wsea4"]
+[ext_resource type="AudioStream" uid="uid://bd36np44j364c" path="res://Assets/Sounds/mexico-144621.mp3" id="8_mysbg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_je3ap"]
 texture = ExtResource("1_qtamv")
@@ -594,7 +594,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_wsea4")
+stream = ExtResource("8_mysbg")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

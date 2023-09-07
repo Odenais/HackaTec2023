@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://jwsopfvt283x" path="res://Assets/PHover.png" id="8_8rfdi"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="9_ibtij"]
 [ext_resource type="Texture2D" uid="uid://j8fxg1d5sbb3" path="res://Sprites/Assets_PixelAdventure/Menu/Buttons/Back.png" id="10_bdosb"]
-[ext_resource type="AudioStream" uid="uid://b008iavp1q15i" path="res://Assets/Sounds/mexico-144621.mp3" id="11_k0yt2"]
+[ext_resource type="AudioStream" uid="uid://bd36np44j364c" path="res://Assets/Sounds/mexico-144621.mp3" id="11_p4u2k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii85o"]
 texture = ExtResource("1_eag0b")
@@ -614,7 +614,7 @@ texture_normal = ExtResource("10_bdosb")
 stretch_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_k0yt2")
+stream = ExtResource("11_p4u2k")
 
 [connection signal="pressed" from="ButtonFresnillo" to="." method="_on_button_fresnillo_pressed"]
 [connection signal="pressed" from="ButtonJerez" to="." method="_on_button_jerez_pressed"]

@@ -2,11 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-<<<<<<< Updated upstream
 uid="uid://cbogxxmrly6vl"
-=======
-uid="uid://bh0eu8y841xya"
->>>>>>> Stashed changes
 path="res://.godot/imported/dripping-water-in-cave-114694.mp3-65ef6c34ab903e2a510f47ee2f7d4bc6.mp3str"
 
 [deps]
@@ -16,11 +12,7 @@ dest_files=["res://.godot/imported/dripping-water-in-cave-114694.mp3-65ef6c34ab9
 
 [params]
 
-<<<<<<< Updated upstream
-loop=false
-=======
 loop=true
->>>>>>> Stashed changes
 loop_offset=0
 bpm=0
 beat_count=0

@@ -2,11 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-<<<<<<< Updated upstream
 uid="uid://gsyt81ov7slx"
-=======
-uid="uid://0yrkc3p4o16m"
->>>>>>> Stashed changes
 path="res://.godot/imported/wind__artic__cold-6195.mp3-4f885c9072ecbd193f82a02bd5fed32a.mp3str"
 
 [deps]
@@ -16,7 +12,7 @@ dest_files=["res://.godot/imported/wind__artic__cold-6195.mp3-4f885c9072ecbd193f
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
