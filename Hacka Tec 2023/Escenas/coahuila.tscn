@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://budhc32g0iak8"]
+[gd_scene load_steps=10 format=3 uid="uid://budhc32g0iak8"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_150l6"]
 [ext_resource type="Texture2D" uid="uid://7a4pstwagjxp" path="res://Assets/S.png" id="2_vm14q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3c7t80fclt6v" path="res://Assets/C.png" id="4_c7iha"]
 [ext_resource type="Texture2D" uid="uid://4r7ejs6nyn5v" path="res://Assets/CHover.png" id="5_malov"]
 [ext_resource type="Texture2D" uid="uid://difv7koli0edk" path="res://Assets/A.png" id="6_new0h"]
+[ext_resource type="Script" path="res://Scripts/ButtonArteaga.gd" id="7_j8l25"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1xfa"]
 texture = ExtResource("1_150l6")
@@ -506,3 +507,6 @@ offset_bottom = 280.0
 texture_normal = ExtResource("6_new0h")
 texture_hover = ExtResource("3_00jg8")
 stretch_mode = 0
+script = ExtResource("7_j8l25")
+
+[connection signal="pressed" from="ButtonArteaga" to="ButtonArteaga" method="_on_pressed"]
