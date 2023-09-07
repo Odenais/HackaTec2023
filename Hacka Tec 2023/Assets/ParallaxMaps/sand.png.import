@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dui0jh5sl3m71"
-path="res://.godot/imported/foreground-1.png-d99a98971c50ca5afb6a2f55dce68ec3.ctex"
+uid="uid://bvy7en7impjed"
+path="res://.godot/imported/sand.png-97507adb6fe7fcf26655fd5f6883f729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/foreground-1.png"
-dest_files=["res://.godot/imported/foreground-1.png-d99a98971c50ca5afb6a2f55dce68ec3.ctex"]
+source_file="res://Assets/ParallaxMaps/sand.png"
+dest_files=["res://.godot/imported/sand.png-97507adb6fe7fcf26655fd5f6883f729.ctex"]
 
 [params]
 
