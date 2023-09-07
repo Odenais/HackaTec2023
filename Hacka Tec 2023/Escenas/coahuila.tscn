@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://budhc32g0iak8"]
+[gd_scene load_steps=18 format=3 uid="uid://budhc32g0iak8"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_150l6"]
 [ext_resource type="Texture2D" uid="uid://7a4pstwagjxp" path="res://Assets/S.png" id="2_vm14q"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://difv7koli0edk" path="res://Assets/A.png" id="6_new0h"]
 [ext_resource type="Texture2D" uid="uid://c56am0li8c0sm" path="res://Assets/AHover.png" id="7_ynpu4"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="8_dr5yc"]
+[ext_resource type="Texture2D" uid="uid://j8fxg1d5sbb3" path="res://Sprites/Assets_PixelAdventure/Menu/Buttons/Back.png" id="10_5m372"]
 
 [sub_resource type="GDScript" id="GDScript_rph2i"]
 script/source = "extends Node2D
@@ -33,13 +34,27 @@ func _on_button_candela_pressed():
 	#get_tree().change_scene_to_file(\"res://Escenas/Cueva afuera.tscn\")
 
 
+func _on_button_saltillo_pressed():
+	transition.play(\"fade_out\")
+	opc = \"DINO\"
+	scene = preload(\"res://Escenas/museo.tscn\")
+	
+func _on_button_volver_pressed():
+	transition.play(\"fade_out\")
+	opc = \"SALIR\"
+	
 func _on_transicion_animation_finished(anim_name):
 	if opc == \"ART\":
 		get_tree().change_scene_to_packed(scene)
 	elif opc == \"CAN\":
 		get_tree().change_scene_to_packed(scene)
-	else:
+	elif opc == \"DINO\":
 		get_tree().change_scene_to_packed(scene) # Escena del museo
+	elif opc == \"SALIR\":
+		get_tree().change_scene_to_file(\"res://Escenas/world.tscn\")
+
+
+
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1xfa"]
@@ -506,6 +521,21 @@ texture = ExtResource("1_150l6")
 [sub_resource type="TileSet" id="TileSet_a7th3"]
 sources/0 = SubResource("TileSetAtlasSource_q1xfa")
 
+[sub_resource type="Animation" id="Animation_5c7k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_4lhmx"]
 resource_name = "fade_in"
 length = 0.7
@@ -532,21 +562,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_5c7k1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transicion/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_b2mwc"]
@@ -588,7 +603,7 @@ _data = {
 script = SubResource("GDScript_rph2i")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-98, -20)
+position = Vector2(-98, -30)
 scale = Vector2(0.64, 0.6)
 tile_set = SubResource("TileSet_a7th3")
 format = 2
@@ -638,6 +653,16 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonVolver" type="TextureButton" parent="."]
+offset_left = 23.0
+offset_top = 625.0
+offset_right = 93.0
+offset_bottom = 695.0
+texture_normal = ExtResource("10_5m372")
+stretch_mode = 0
+
+[connection signal="pressed" from="ButtonSaltillo" to="." method="_on_button_saltillo_pressed"]
 [connection signal="pressed" from="ButtonCandela" to="." method="_on_button_candela_pressed"]
 [connection signal="pressed" from="ButtonArteaga" to="." method="_on_button_arteaga_pressed"]
 [connection signal="animation_finished" from="Transicion" to="." method="_on_transicion_animation_finished"]
+[connection signal="pressed" from="ButtonVolver" to="." method="_on_button_volver_pressed"]

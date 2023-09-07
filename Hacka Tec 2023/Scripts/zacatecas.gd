@@ -14,3 +14,11 @@ func _on_button_jerez_pressed():
 
 func _on_button_plateros_pressed():
 	pass # Replace with function body.
+
+
+func _on_button_volver_pressed():
+	transition.play("fade_out")
+
+func _on_transicion_animation_finished(anim_name):
+	if anim_name == "fade_out":
+		get_tree().change_scene_to_file("res://Escenas/world.tscn")

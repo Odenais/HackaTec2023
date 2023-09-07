@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqjm4fy5ki0f4"]
+[gd_scene load_steps=17 format=3 uid="uid://cqjm4fy5ki0f4"]
 
 [ext_resource type="Script" path="res://Scripts/zacatecas.gd" id="1_0slsq"]
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_eag0b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://46us10n3me46" path="res://Assets/P.png" id="6_plorc"]
 [ext_resource type="Texture2D" uid="uid://jwsopfvt283x" path="res://Assets/PHover.png" id="8_8rfdi"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="9_ibtij"]
+[ext_resource type="Texture2D" uid="uid://j8fxg1d5sbb3" path="res://Sprites/Assets_PixelAdventure/Menu/Buttons/Back.png" id="10_bdosb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii85o"]
 texture = ExtResource("1_eag0b")
@@ -465,6 +466,21 @@ texture = ExtResource("1_eag0b")
 [sub_resource type="TileSet" id="TileSet_57h10"]
 sources/0 = SubResource("TileSetAtlasSource_ii85o")
 
+[sub_resource type="Animation" id="Animation_5c7k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_4lhmx"]
 resource_name = "fade_in"
 length = 0.7
@@ -491,21 +507,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_5c7k1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transicion/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_b2mwc"]
@@ -597,6 +598,22 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonVolver" type="TextureButton" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = 623.0
+offset_right = 93.0
+offset_bottom = 693.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("10_bdosb")
+stretch_mode = 0
+
 [connection signal="pressed" from="ButtonFresnillo" to="." method="_on_button_fresnillo_pressed"]
 [connection signal="pressed" from="ButtonJerez" to="." method="_on_button_jerez_pressed"]
 [connection signal="pressed" from="ButtonPlateros" to="." method="_on_button_plateros_pressed"]
+[connection signal="animation_finished" from="Transicion" to="." method="_on_transicion_animation_finished"]
+[connection signal="pressed" from="ButtonVolver" to="." method="_on_button_volver_pressed"]
