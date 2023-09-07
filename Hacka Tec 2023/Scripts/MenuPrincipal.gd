@@ -3,6 +3,12 @@ class_name Menu
 @onready var transition = $Transicion
 @onready var mex = preload("res://Escenas/world.tscn")
 
+var dir = Vector2(1,0)
+var speed = 60
+
+func _physics_process(delta):
+	$ParallaxBackground.scroll_base_offset += dir * speed * delta
+	
 func _ready():
 	$AudioStreamPlayer2D.play()
 

@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcyesmygknrh2"]
+[gd_scene load_steps=13 format=3 uid="uid://dcyesmygknrh2"]
 
 [ext_resource type="Script" path="res://Scripts/MenuPrincipal.gd" id="1_3o32w"]
 [ext_resource type="Texture2D" uid="uid://em3hhtgs2eyf" path="res://Assets/Parallax/Parallax background.png" id="1_ihhe4"]
 [ext_resource type="FontFile" uid="uid://covt2bip852x7" path="res://Assets/Fonts/04b_30/04B_30__.TTF" id="1_oqrvj"]
 [ext_resource type="FontFile" uid="uid://8jtfifoqgh0j" path="res://Assets/Fonts/mayan_2/Mayan.ttf" id="1_yeqy2"]
+[ext_resource type="Texture2D" uid="uid://cqgs3aseyvj8m" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-02.png" id="3_8gl12"]
+[ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-03.png" id="4_whdvw"]
+[ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-04.png" id="5_nsdg3"]
 [ext_resource type="AudioStream" uid="uid://duplcui57ux08" path="res://Assets/Sounds/tex-mex-delight-mexican-mariachi-113044.mp3" id="5_xbv4x"]
 
 [sub_resource type="Animation" id="Animation_5c7k1"]
@@ -90,10 +93,40 @@ script = ExtResource("1_3o32w")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0)
+motion_mirroring = Vector2(1438, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(719, 358)
+position = Vector2(-8, -10)
 texture = ExtResource("1_ihhe4")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0)
+motion_mirroring = Vector2(1438, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(-9, 346)
+texture = ExtResource("3_8gl12")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(1438, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(-9, 346)
+texture = ExtResource("4_whdvw")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(1438, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(-10, 313)
+texture = ExtResource("5_nsdg3")
+centered = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -122,6 +155,7 @@ offset_right = 216.5
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 15
 
 [node name="Tittle" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
