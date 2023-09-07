@@ -1,8 +1,13 @@
 extends Node
 class_name Menu
+@onready var transition = $Transicion
+@onready var mex = preload("res://Escenas/world.tscn")
 
 func _on_button_play_pressed():
-	get_tree().change_scene_to_file("res://Escenas/world.tscn")
+	transition.play("fade_out")
 
 func _on_button_pressed():
 	get_tree().quit()
+
+func _on_transicion_animation_finished(anim_name):
+	get_tree().change_scene_to_packed(mex)

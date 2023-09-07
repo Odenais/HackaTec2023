@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://budhc32g0iak8"]
+[gd_scene load_steps=17 format=3 uid="uid://budhc32g0iak8"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_150l6"]
 [ext_resource type="Texture2D" uid="uid://7a4pstwagjxp" path="res://Assets/S.png" id="2_vm14q"]
@@ -13,15 +13,33 @@
 [sub_resource type="GDScript" id="GDScript_rph2i"]
 script/source = "extends Node2D
 
+@onready var transition = $Transicion
+var opc = \"\"
+var scene
+
+func _ready():
+	transition.play(\"fade_in\")
 
 func _on_button_arteaga_pressed():
-	get_tree().change_scene_to_file(\"res://Escenas/Arteaga.tscn\")
-
-
-
+	transition.play(\"fade_out\")
+	opc = \"ART\"
+	scene = preload(\"res://Escenas/Arteaga.tscn\")
+	#get_tree().change_scene_to_file(\"res://Escenas/Arteaga.tscn\")
 
 func _on_button_candela_pressed():
-	get_tree().change_scene_to_file(\"res://Escenas/Cueva afuera.tscn\")
+	transition.play(\"fade_out\")
+	opc = \"CAN\"
+	scene = preload(\"res://Escenas/Cueva afuera.tscn\")
+	#get_tree().change_scene_to_file(\"res://Escenas/Cueva afuera.tscn\")
+
+
+func _on_transicion_animation_finished(anim_name):
+	if opc == \"ART\":
+		get_tree().change_scene_to_packed(scene)
+	elif opc == \"CAN\":
+		get_tree().change_scene_to_packed(scene)
+	else:
+		get_tree().change_scene_to_packed(scene) # Escena del museo
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1xfa"]
@@ -488,6 +506,84 @@ texture = ExtResource("1_150l6")
 [sub_resource type="TileSet" id="TileSet_a7th3"]
 sources/0 = SubResource("TileSetAtlasSource_q1xfa")
 
+[sub_resource type="Animation" id="Animation_4lhmx"]
+resource_name = "fade_in"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 0.0185815),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transicion/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5c7k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b2mwc"]
+resource_name = "fade_out"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transicion/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsh1a"]
+_data = {
+"RESET": SubResource("Animation_5c7k1"),
+"fade_in": SubResource("Animation_4lhmx"),
+"fade_out": SubResource("Animation_b2mwc")
+}
+
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_rph2i")
 
@@ -528,5 +624,20 @@ stretch_mode = 0
 
 [node name="Background" parent="." instance=ExtResource("8_dr5yc")]
 
+[node name="Transicion" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nsh1a")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transicion"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="ButtonCandela" to="." method="_on_button_candela_pressed"]
 [connection signal="pressed" from="ButtonArteaga" to="." method="_on_button_arteaga_pressed"]
+[connection signal="animation_finished" from="Transicion" to="." method="_on_transicion_animation_finished"]

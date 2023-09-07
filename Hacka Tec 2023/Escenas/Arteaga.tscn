@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7e44uyn8huv7"]
+[gd_scene load_steps=23 format=3 uid="uid://b7e44uyn8huv7"]
 
 [ext_resource type="Texture2D" uid="uid://bge4p4an6seak" path="res://Sprites/tileset_snow_two.png" id="1_npp1q"]
 [ext_resource type="Texture2D" uid="uid://cipb4ju6mtced" path="res://Sprites/tileset_snow_three.png" id="2_ijsee"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cjsfetl2jnmio" path="res://Players/MainPlayer/player.tscn" id="4_bwk13"]
 [ext_resource type="PackedScene" uid="uid://b7k6knb4usm3o" path="res://Coleccionables/piedras.tscn" id="5_c0uco"]
 [ext_resource type="PackedScene" uid="uid://k7wnqdtlqd1e" path="res://portalSalidaArteaga.tscn" id="5_jpo15"]
-[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Assets/Parallax/parallax-00.png" id="6_pwq0n"]
-[ext_resource type="Texture2D" uid="uid://d02l7nnnfajd3" path="res://Assets/Parallax/parallax-01.png" id="7_knhj2"]
+[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-00.png" id="6_pwq0n"]
+[ext_resource type="Texture2D" uid="uid://d02l7nnnfajd3" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-01.png" id="7_knhj2"]
 [ext_resource type="Texture2D" uid="uid://cqgs3aseyvj8m" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-02.png" id="8_vy4sh"]
 [ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Sprites/Assets_PixelAdventure/Parallax/parallax-03.png" id="9_k6mig"]
 
@@ -449,6 +449,84 @@ size = Vector2(40, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vb8o"]
 size = Vector2(20, 131)
 
+[sub_resource type="Animation" id="Animation_4lhmx"]
+resource_name = "fade_in"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 0.0185815),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transicion/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5c7k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b2mwc"]
+resource_name = "fade_out"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transicion/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsh1a"]
+_data = {
+"RESET": SubResource("Animation_5c7k1"),
+"fade_in": SubResource("Animation_4lhmx"),
+"fade_out": SubResource("Animation_b2mwc")
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Piedras" parent="." instance=ExtResource("5_c0uco")]
@@ -558,3 +636,20 @@ shape = SubResource("RectangleShape2D_7vb8o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6/StaticBody2D"]
 position = Vector2(2170, 721)
 shape = SubResource("RectangleShape2D_7vb8o")
+
+[node name="Transicion" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nsh1a")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transicion"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="Transicion" to="Area2D" method="_on_transicion_animation_finished"]

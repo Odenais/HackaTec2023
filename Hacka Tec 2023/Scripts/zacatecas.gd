@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var transition = $Transicion
+func _ready():
+	transition.play("fade_in")
 
 func _on_button_fresnillo_pressed():
 	pass
