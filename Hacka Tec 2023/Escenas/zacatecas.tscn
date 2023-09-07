@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqjm4fy5ki0f4"]
+[gd_scene load_steps=18 format=3 uid="uid://cqjm4fy5ki0f4"]
 
 [ext_resource type="Script" path="res://Scripts/zacatecas.gd" id="1_0slsq"]
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_eag0b"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://jwsopfvt283x" path="res://Assets/PHover.png" id="8_8rfdi"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="9_ibtij"]
 [ext_resource type="Texture2D" uid="uid://j8fxg1d5sbb3" path="res://Sprites/Assets_PixelAdventure/Menu/Buttons/Back.png" id="10_bdosb"]
+[ext_resource type="AudioStream" uid="uid://b008iavp1q15i" path="res://Assets/Sounds/mexico-144621.mp3" id="11_k0yt2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii85o"]
 texture = ExtResource("1_eag0b")
@@ -611,6 +612,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("10_bdosb")
 stretch_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_k0yt2")
 
 [connection signal="pressed" from="ButtonFresnillo" to="." method="_on_button_fresnillo_pressed"]
 [connection signal="pressed" from="ButtonJerez" to="." method="_on_button_jerez_pressed"]

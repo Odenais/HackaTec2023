@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< Updated upstream
 uid="uid://bd36np44j364c"
+=======
+uid="uid://b008iavp1q15i"
+>>>>>>> Stashed changes
 path="res://.godot/imported/mexico-144621.mp3-64e9280db4ceb8d075b3249dff87d342.mp3str"
 
 [deps]
@@ -12,7 +16,11 @@ dest_files=["res://.godot/imported/mexico-144621.mp3-64e9280db4ceb8d075b3249dff8
 
 [params]
 
+<<<<<<< Updated upstream
 loop=false
+=======
+loop=true
+>>>>>>> Stashed changes
 loop_offset=0
 bpm=0
 beat_count=0

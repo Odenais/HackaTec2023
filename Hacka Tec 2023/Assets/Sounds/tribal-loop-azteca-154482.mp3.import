@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< Updated upstream
 uid="uid://cdykseb0vgsay"
+=======
+uid="uid://c2hlj7af2ds2m"
+>>>>>>> Stashed changes
 path="res://.godot/imported/tribal-loop-azteca-154482.mp3-ec280e6bf00ce65c359de22bf295d881.mp3str"
 
 [deps]

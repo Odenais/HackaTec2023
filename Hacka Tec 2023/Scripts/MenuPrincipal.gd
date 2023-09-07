@@ -3,6 +3,9 @@ class_name Menu
 @onready var transition = $Transicion
 @onready var mex = preload("res://Escenas/world.tscn")
 
+func _ready():
+	$AudioStreamPlayer2D.play()
+
 func _on_button_play_pressed():
 	transition.play("fade_out")
 

@@ -1,10 +1,14 @@
 extends Node2D
 
+
 @onready var transition = $Transicion
 var opc = ""
 var scene
 func _ready():
 	transition.play("fade_in")
+	$AudioStreamPlayer2D.play()
+
+
 
 func _on_texture_button_pressed():
 	transition.play("fade_out")

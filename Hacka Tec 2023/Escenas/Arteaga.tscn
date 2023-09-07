@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7e44uyn8huv7"]
+[gd_scene load_steps=26 format=3 uid="uid://b7e44uyn8huv7"]
 
+[ext_resource type="Script" path="res://Scripts/ScriptArteaga.gd" id="1_8i1ej"]
 [ext_resource type="Texture2D" uid="uid://bge4p4an6seak" path="res://Sprites/tileset_snow_two.png" id="1_npp1q"]
 [ext_resource type="Texture2D" uid="uid://cipb4ju6mtced" path="res://Sprites/tileset_snow_three.png" id="2_ijsee"]
 [ext_resource type="Texture2D" uid="uid://d2ukldolq73v3" path="res://Sprites/tileset_snow_three2.png" id="3_3cnm6"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c70rkbl43h062" path="res://Scripts/Pincho3.tscn" id="12_eyckv"]
 [ext_resource type="PackedScene" uid="uid://b5ipuhg0esuts" path="res://Scripts/Pincho2.tscn" id="13_6arot"]
 [ext_resource type="PackedScene" uid="uid://bvovkkqft1dcl" path="res://Scripts/Pincho4.tscn" id="14_wxshy"]
+[ext_resource type="AudioStream" uid="uid://0yrkc3p4o16m" path="res://Assets/Sounds/wind__artic__cold-6195.mp3" id="16_pnf65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1q74"]
 texture = ExtResource("1_npp1q")
@@ -519,6 +521,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_8i1ej")
 
 [node name="Piedras" parent="." instance=ExtResource("5_c0uco")]
 position = Vector2(536, 237)
@@ -633,5 +636,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_pnf65")
 
 [connection signal="animation_finished" from="Transicion" to="Area2D" method="_on_transicion_animation_finished"]

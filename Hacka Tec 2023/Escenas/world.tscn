@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqyx8c2nkowib"]
+[gd_scene load_steps=15 format=3 uid="uid://dqyx8c2nkowib"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_qtamv"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_ydkud"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://3c7t80fclt6v" path="res://Assets/C.png" id="3_7weyr"]
 [ext_resource type="Texture2D" uid="uid://bcanbj0w7axt0" path="res://Assets/ZHover.png" id="5_gm35u"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="7_eh8x7"]
+[ext_resource type="AudioStream" uid="uid://b008iavp1q15i" path="res://Assets/Sounds/mexico-144621.mp3" id="8_wsea4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_je3ap"]
 texture = ExtResource("1_qtamv")
@@ -472,6 +473,21 @@ texture = ExtResource("1_qtamv")
 [sub_resource type="TileSet" id="TileSet_dio62"]
 sources/0 = SubResource("TileSetAtlasSource_je3ap")
 
+[sub_resource type="Animation" id="Animation_5c7k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicion/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_4lhmx"]
 resource_name = "fade_in"
 length = 0.7
@@ -498,21 +514,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_5c7k1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transicion/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_b2mwc"]
@@ -591,6 +592,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_wsea4")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

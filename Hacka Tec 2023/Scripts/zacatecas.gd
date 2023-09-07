@@ -3,6 +3,7 @@ extends Node2D
 @onready var transition = $Transicion
 func _ready():
 	transition.play("fade_in")
+	$AudioStreamPlayer2D.play()
 
 func _on_button_fresnillo_pressed():
 	pass
