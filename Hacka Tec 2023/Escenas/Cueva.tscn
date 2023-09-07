@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bllygqmil8wno"]
+[gd_scene load_steps=10 format=3 uid="uid://c2jhbbsej3g3"]
 
-[ext_resource type="Texture2D" uid="uid://cwgrvtatr6ok7" path="res://Assets/tileset_dirt.png" id="1_wlo46"]
+[ext_resource type="Texture2D" uid="uid://cwgrvtatr6ok7" path="res://Sprites/Rocky Roads/Tilesets/tileset_dirt.png" id="1_wlo46"]
 [ext_resource type="PackedScene" uid="uid://cjsfetl2jnmio" path="res://Players/MainPlayer/player.tscn" id="2_fqwt8"]
 [ext_resource type="Texture2D" uid="uid://bvsvl5e7j2ji7" path="res://Assets/light.png" id="3_bqh8p"]
+[ext_resource type="PackedScene" uid="uid://dj6qtnewhly76" path="res://Scripts/salidaCuevaMenu.tscn" id="4_tfq3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_donfl"]
 texture = ExtResource("1_wlo46")
@@ -158,9 +159,6 @@ gradient = SubResource("Gradient_nj7by")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm5lc"]
 size = Vector2(79, 720)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6cvem"]
-radius = 29.0172
-
 [node name="Cueva" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -187,7 +185,6 @@ scale = Vector2(13.5, 14.0781)
 texture = SubResource("GradientTexture2D_e4o3p")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -207,8 +204,4 @@ shape = SubResource("RectangleShape2D_gm5lc")
 position = Vector2(1126, 279)
 shape = SubResource("RectangleShape2D_gm5lc")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(699, 288)
-shape = SubResource("CircleShape2D_6cvem")
+[node name="Area2D" parent="." instance=ExtResource("4_tfq3t")]

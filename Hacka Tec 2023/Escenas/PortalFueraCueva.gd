@@ -1,5 +1,5 @@
 extends Area2D
-var scene = preload("res://Escenas/coahuila.tscn")
+var scene = preload("res://Escenas/Cueva.tscn")
 func _on_body_entered(body):
 	if body.name == "Player":
 		$"../Transicion".play("fade_out")

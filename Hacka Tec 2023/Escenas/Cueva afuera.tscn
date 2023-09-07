@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7fecre66pnm2"]
+[gd_scene load_steps=17 format=3 uid="uid://lcsx105t8xsx"]
 
 [ext_resource type="Texture2D" uid="uid://nt61sn8u2u2h" path="res://Assets/parallax-02.png" id="1_op06r"]
 [ext_resource type="Texture2D" uid="uid://cwgrvtatr6ok7" path="res://Sprites/Rocky Roads/Tilesets/tileset_dirt.png" id="2_tiqqa"]
