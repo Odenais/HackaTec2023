@@ -6,6 +6,9 @@ var scene
 func _ready():
 	transition.play("fade_in")
 	$AudioStreamPlayer2D.play()
+func _process(delta):
+	if $TextureButton2.is_hovered():
+		$Label.text = "Coahuila"
 
 func _on_texture_button_pressed():
 	transition.play("fade_out")
@@ -24,3 +27,4 @@ func _on_transicion_animation_finished(anim_name):
 		get_tree().change_scene_to_packed(scene)
 	elif opc == "COA":
 		get_tree().change_scene_to_packed(scene)
+
