@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjsfetl2jnmio"]
+[gd_scene load_steps=8 format=3 uid="uid://cjsfetl2jnmio"]
 
-[ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Sprites/Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_ct2gf"]
-[ext_resource type="Script" path="res://Players/MainPlayer/Camera2D.gd" id="2_uqswf"]
+[ext_resource type="Texture2D" uid="uid://b6nnmhj2x0a8w" path="res://Assets/CuahuTECNMo.png" id="1_p1l2b"]
 
 [sub_resource type="GDScript" id="GDScript_gd2pn"]
 script/source = "extends CharacterBody2D
@@ -113,7 +112,7 @@ _data = {
 script = SubResource("GDScript_gd2pn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ct2gf")
+texture = ExtResource("1_p1l2b")
 hframes = 11
 vframes = 4
 frame = 1
@@ -127,6 +126,3 @@ speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_4dor6")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_uqswf")

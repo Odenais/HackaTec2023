@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://budhc32g0iak8"]
+[gd_scene load_steps=13 format=3 uid="uid://budhc32g0iak8"]
 
 [ext_resource type="Texture2D" uid="uid://ddld5b0lk14x6" path="res://Assets/TilesetFloor.png" id="1_150l6"]
 [ext_resource type="Texture2D" uid="uid://7a4pstwagjxp" path="res://Assets/S.png" id="2_vm14q"]
 [ext_resource type="Texture2D" uid="uid://hg0nb5yqong8" path="res://Assets/SHover.png" id="3_nqanp"]
 [ext_resource type="Texture2D" uid="uid://3c7t80fclt6v" path="res://Assets/C.png" id="4_c7iha"]
 [ext_resource type="Texture2D" uid="uid://4r7ejs6nyn5v" path="res://Assets/CHover.png" id="5_malov"]
+[ext_resource type="Script" path="res://Escenas/ButtonCandela.gd" id="6_fh5no"]
 [ext_resource type="Texture2D" uid="uid://difv7koli0edk" path="res://Assets/A.png" id="6_new0h"]
 [ext_resource type="Texture2D" uid="uid://c56am0li8c0sm" path="res://Assets/AHover.png" id="7_ynpu4"]
 [ext_resource type="PackedScene" uid="uid://c1pv0thm6y8vo" path="res://Escenas/background.tscn" id="8_dr5yc"]
@@ -15,6 +16,12 @@ script/source = "extends Node2D
 
 func _on_button_arteaga_pressed():
 	get_tree().change_scene_to_file(\"res://Escenas/Arteaga.tscn\")
+
+
+
+
+func _on_button_candela_pressed():
+	get_tree().change_scene_to_file(\"res://Escenas/Cueva afuera.tscn\")
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1xfa"]
@@ -508,6 +515,7 @@ offset_bottom = 387.0
 texture_normal = ExtResource("4_c7iha")
 texture_hover = ExtResource("5_malov")
 stretch_mode = 0
+script = ExtResource("6_fh5no")
 
 [node name="ButtonArteaga" type="TextureButton" parent="."]
 offset_left = 246.0
@@ -520,4 +528,5 @@ stretch_mode = 0
 
 [node name="Background" parent="." instance=ExtResource("8_dr5yc")]
 
+[connection signal="pressed" from="ButtonCandela" to="." method="_on_button_candela_pressed"]
 [connection signal="pressed" from="ButtonArteaga" to="." method="_on_button_arteaga_pressed"]
